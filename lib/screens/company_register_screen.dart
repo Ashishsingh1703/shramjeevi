@@ -31,14 +31,24 @@ class _CompanyRegisterScreenState extends State<CompanyRegisterScreen> {
       backgroundColor: const Color(0xFF0F1C2E),
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(64),
-        child: SafeArea(
-          bottom: false,
-          child: AppBar(
-            backgroundColor: const Color(0xFF0A1525),
-            elevation: 0,
-            surfaceTintColor: Colors.transparent,
-            scrolledUnderElevation: 0,
-            toolbarHeight: 64,
+        child: Container(
+          decoration: const BoxDecoration(
+            color: Color(0xFF0A1525),
+            border: Border(
+              bottom: BorderSide.none,
+            ),
+          ),
+          child: SafeArea(
+            bottom: false,
+            child: AppBar(
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              shadowColor: Colors.transparent,
+              surfaceTintColor: Colors.transparent,
+              scrolledUnderElevation: 0,
+              toolbarHeight: 64,
+              bottomOpacity: 0.0,
+              automaticallyImplyLeading: false,
             leading: Padding(
               padding: const EdgeInsets.only(left: 8),
               child: Container(
@@ -108,7 +118,8 @@ class _CompanyRegisterScreenState extends State<CompanyRegisterScreen> {
                 ),
               ],
             ),
-            centerTitle: false,
+              centerTitle: false,
+            ),
           ),
         ),
       ),
@@ -373,12 +384,15 @@ class _CompanyRegisterScreenState extends State<CompanyRegisterScreen> {
                 ),
               ),
               const SizedBox(width: 8),
-              Text(
-                "$label *",
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 15,
+              Flexible(
+                child: Text(
+                  "$label *",
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 15,
+                  ),
+                  overflow: TextOverflow.ellipsis,
                 ),
               ),
             ],
