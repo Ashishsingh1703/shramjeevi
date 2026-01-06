@@ -36,6 +36,8 @@ class _CompanyRegisterScreenState extends State<CompanyRegisterScreen> {
           child: AppBar(
             backgroundColor: const Color(0xFF0A1525),
             elevation: 0,
+            surfaceTintColor: Colors.transparent,
+            scrolledUnderElevation: 0,
             toolbarHeight: 64,
             leading: Padding(
               padding: const EdgeInsets.only(left: 8),
