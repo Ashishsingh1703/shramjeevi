@@ -106,21 +106,6 @@ class _WorkerRegisterScreenState extends State<WorkerRegisterScreen> {
               ],
             ),
             centerTitle: false,
-            bottom: PreferredSize(
-              preferredSize: const Size.fromHeight(1),
-              child: Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      Colors.transparent,
-                      const Color(0xFFFF8C32).withOpacity(0.3),
-                      Colors.transparent,
-                    ],
-                  ),
-                ),
-                height: 2,
-              ),
-            ),
           ),
         ),
       ),
@@ -291,12 +276,15 @@ class _WorkerRegisterScreenState extends State<WorkerRegisterScreen> {
                                     size: 20,
                                   ),
                                   const SizedBox(width: 8),
-                                  const Text(
-                                    "Available for Work Today",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 15),
+                                  const Flexible(
+                                    child: Text(
+                                      "Available for Work Today",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 15),
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -305,6 +293,8 @@ class _WorkerRegisterScreenState extends State<WorkerRegisterScreen> {
                                 "Toggle when you're ready to receive jobs",
                                 style: TextStyle(
                                     color: Colors.white60, fontSize: 12),
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 2,
                               ),
                             ],
                           ),
@@ -364,17 +354,22 @@ class _WorkerRegisterScreenState extends State<WorkerRegisterScreen> {
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
                         children: const [
                           Icon(Icons.verified_user,
                               color: Colors.white, size: 22),
                           SizedBox(width: 10),
-                          Text(
-                            "Register as Worker – It's Free",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                                fontSize: 16,
-                                letterSpacing: 0.5),
+                          Flexible(
+                            child: Text(
+                              "Register as Worker – It's Free",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  letterSpacing: 0.5),
+                              textAlign: TextAlign.center,
+                              overflow: TextOverflow.ellipsis,
+                            ),
                           ),
                         ],
                       ),

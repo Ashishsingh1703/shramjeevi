@@ -107,21 +107,6 @@ class _CompanyRegisterScreenState extends State<CompanyRegisterScreen> {
               ],
             ),
             centerTitle: false,
-            bottom: PreferredSize(
-              preferredSize: const Size.fromHeight(1),
-              child: Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      Colors.transparent,
-                      const Color(0xFFFF8C32).withOpacity(0.3),
-                      Colors.transparent,
-                    ],
-                  ),
-                ),
-                height: 2,
-              ),
-            ),
           ),
         ),
       ),
@@ -242,7 +227,7 @@ class _CompanyRegisterScreenState extends State<CompanyRegisterScreen> {
                     ],
                   ),
                   const SizedBox(height: 16),
-                  Row(
+                  Wrap(
                     children: [
                       const Text(
                         "By registering, you agree to our ",
@@ -338,14 +323,19 @@ class _CompanyRegisterScreenState extends State<CompanyRegisterScreen> {
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
                         children: const [
-                          Text(
-                            "Register Company",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                              fontSize: 16,
-                              letterSpacing: 0.5,
+                          Flexible(
+                            child: Text(
+                              "Register Company",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                fontSize: 16,
+                                letterSpacing: 0.5,
+                              ),
+                              textAlign: TextAlign.center,
+                              overflow: TextOverflow.ellipsis,
                             ),
                           ),
                           SizedBox(width: 8),
